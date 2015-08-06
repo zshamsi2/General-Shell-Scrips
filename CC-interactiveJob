@@ -1,2 +1,2 @@
-# interactive job on campuscluster
+# interactive job on campuscluster ?!! not working
 qsub -q cse -I -l walltime=00:30:00,nodes=1:ppn=12 mkCluster.py 
