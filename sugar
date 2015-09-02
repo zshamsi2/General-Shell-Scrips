@@ -1,1 +1,5 @@
 source leaprc.GLYCAM_06j-1
+source leaprc.ff14SB
+complex=loadpdb ${cmplx}.pdb
+
+saveamberparm complex ${cmplx}.top ${cmplx}.crd
