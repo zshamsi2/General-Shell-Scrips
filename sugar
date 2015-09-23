@@ -1,13 +1,13 @@
 source leaprc.GLYCAM_06j-1
 source leaprc.ff14SB
 complex=loadpdb ${cmplx}.pdb
+bond complex.789.C1 complex.563.ND2
+bond complex.783.C1 complex.679.ND2
+bond complex.786.C1 complex.346.ND2
+bond complex.784.C1 complex.192.ND2
+bond complex.785.C1 complex.237.ND2
+bond complex.782.C1 complex.381.ND2
+bond complex.781.C1 complex.69.ND2 
+bond complex.788.C1 complex.363.ND2
 set default PBradii mbondi2 
-bond complex.789.C1 complex.563.ND1
-bond complex.783.C1 complex.679.ND1
-bond complex.786.C1 complex.346.ND1
-bond complex.784.C1 complex.192.ND1
-bond complex.785.C1 complex.237.ND1
-bond complex.782.C1 complex.381.ND1
-bond complex.781.C1 complex.69.ND1 
-bond complex.788.C1 complex.363.ND1
 saveamberparm complex ${cmplx}.top ${cmplx}.crd
