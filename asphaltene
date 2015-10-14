@@ -1,0 +1,1 @@
+paste Sys2-8A-urea.txt Sys2-8A-but.txt | awk '{ a=$2 - ((40-$2)/(700-$4))*$4; print $1*60/1000, $2, $4, a }' > gamma_vs_time_urea.txt
