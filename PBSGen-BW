@@ -33,6 +33,7 @@ do
 #PBS -q low 
 #PBS -A jt3
 cd ${path}
+
 export AMBERHOME=/projects/sciteam/jt3/amber14cuda
 export PATH=/projects/sciteam/jt3/amber14cuda/bin/:$PATH
 export CUDA_HOME=/opt/nvidia/cudatoolkit6.5/6.5.14-1.0502.9613.6.1
