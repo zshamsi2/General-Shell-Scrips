@@ -1,0 +1,38 @@
+#Input file name (.in)
+iName=MD
+r=1 #Sampling round
+a=2 #input index
+b=3 #output index
+
+# .in file address
+iPath=${Path}
+# .top file address
+pPath=${Path}/MD${r}/top
+# .crd or .rst file address for input
+cPath=${Path}/MD${r}/MD${r}-${a}
+# .rst (restart) file address output
+rPath=${Path}/MD${r}/MD${r}-${b}
+# .out file address
+oPath=${Path}/MD${r}/MD${r}-${b}
+# General path
+path=${Path}/MD${r}/MD${r}-${b}
+
+cd ${path}
+jobname=Nter-apo
+cat >  PBS_$${jobname} << EOF
+#PBS -l nodes=44:ppn=1:xk
+#PBS -l walltime=06:00:00
+#PBS -N ${jobname}
+#PBS -e ${jobname}.err
+#PBS -o ${jobname}.out
+#PBS -q low
+#PBS -A jt3
+cd ${path}
+EOF
+while read line
+do
+  file=`echo ${line}/*.rst`
+  f=`echo ${file%.*}`
+  echo "aprun -n 1 -N 1 pmemd.cuda -O -i ${iPath}/${iName}.in -o ${oPath}/${line}/${line}.out -p ${pPath}/${line}.prmtop -c ${cPath}/${line}/${line}_md${r}-${a}.rst -r ${rPath}/${line}/${line}_md${r}-${b}.rst -x ${rPath}/${line}/${line}_md${r}-${b}.mdcrd &" >> PBS_${jobname}
+done<strList
+echo "wait" >> PBS_${jobname}
