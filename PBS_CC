@@ -1,0 +1,7 @@
+#PBS -l walltime=23:30:00
+#PBS -l nodes=4:ppn=12
+#PBS -N 4MN8
+#PBS -q cse
+cd /home/zshamsi2/project-cse/FLS/equi
+mkdir /home/zshamsi2/project-cse/FLS/equi/4MN8
+pmemd -O -i equi.in -o 4MN8_equ.out -p 4MN8.top -c 4MN8_min.rst -r 4MN8_equ.rst
