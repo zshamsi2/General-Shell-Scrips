@@ -1,3 +1,4 @@
+# Generating multiple PBS files for sumission on Shadowfax using shell script
 
 r=1 #Sampling round
 a=2 #input index
