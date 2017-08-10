@@ -1,3 +1,5 @@
+# Generating multiple PBS files for sumission on Blue Waters using shell script
+
 #Input file name (.in)
 iName=MD
 r=1 #Sampling round
