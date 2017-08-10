@@ -1,3 +1,5 @@
+# Generating multiple PBS files with each multiple parallel simulations for sumission on Blue Waters using shell script
+
 jobname=FLS
 cat >  PBS_${jobname} << EOF
 #PBS -l nodes=30:ppn=1:xk
